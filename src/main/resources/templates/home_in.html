@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HomeAssists</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 50px;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 60px;
+        }
+
+        .nav-links li {
+            padding: 10px 15px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .hero {
+            position: relative;
+            height: 60vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('HomeAssists1.png') no-repeat center center/cover;
+            filter: blur(3px);
+            z-index: -1;
+        }
+
+        .hero-text {
+            position:relative;
+            z-index: 1;
+            background-color: #d5d8c2;
+            color: black;
+            font-weight: bold;
+            border: 3px solid #f1f1f1;
+        }
+
+        .booking {
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .services {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .service-card {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 200px;
+            text-align: center;
+        }
+
+        .service-card img {
+            width: 100px;
+            height: auto;
+            display: block;
+            margin: 0 auto 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+
+    </style>
+</head>
+<body>
+<header>
+    <nav class="navbar">
+        <div class="logo">
+            <img th:src="@{HomeAssists1.png}" alt="HomeAssists Logo">
+        </div>
+        <ul class="nav-links">
+            <li><a th:href="@{/homeTab}">Home</a></li>
+            <li><a th:href="@{/myServices}">My Services</a></li>
+            <li><a th:href="@{/about}">About Us</a></li>
+            <li><a href="mailto:adnanaish606@gmail.com">Contact</a></li>
+            <li>
+                <b>Choose Area</b>
+                <select name="city" id="city">
+                    <option value="Knowledge Park 2">Knowledge Park 2</option>
+                    <option value="Pari Chowk">Pari Chowk</option>
+                    <option value="Alpha 1">Alpha 1</option>
+                    <option value="Delta 1">Delta 1</option>
+                    <option value="GNIDA office">GNIDA Office</option>
+                    <option value="Depot Station">Depot Station</option>
+                </select></li>
+            <li><a th:href="@{/logout}">Log Out</a></li>
+        </ul>
+    </nav>
+</header>
+<section class="hero">
+    <div class="hero-text">
+        <h1>Welcome to HomeAssists</h1>
+        <p>A Service Provider for Carpentry, Plumbing, Electrical, and Maid Services</p>
+    </div>
+</section>
+<section class="booking">
+    <h2>Book a Service</h2>
+    <div class="services">
+        <div class="service-card">
+            <img th:src="@{carpentry.png}" alt="Carpentry Service"/>
+            <h3>Carpentry</h3>
+            <a th:href="@{/userform}"><button>Book Now</button></a>
+        </div>
+        <div class="service-card">
+            <img th:src="@{plumber.png}" alt="Plumbing Service"/>
+            <h3>Plumbing</h3>
+            <a th:href="@{/userform}"><button>Book Now</button></a>
+        </div>
+        <div class="service-card">
+            <img th:src="@{electrical-logo.png}" alt="Electrical Service">
+            <h3>Electrical</h3>
+            <a th:href="@{/userform}"><button>Book Now</button></a>
+        </div>
+        <div class="service-card">
+            <img th:src="@{maid.png}" alt="Maid Service">
+            <h3>Maid</h3>
+            <a th:href="@{/userform}"><button>Book Now</button></a>
+        </div>
+    </div>
+</section>
+</body>
+</html>

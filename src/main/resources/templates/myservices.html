@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Services</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url('HomeAssists.jpeg') no-repeat center center/cover;
+        }
+
+        h1 {
+            font-size:45px;
+            text-align: center;
+            color: red;
+        }
+
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        th, td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: left;
+            background-color: #333; /* Dark color for all columns */
+            color: white; /* Text color for contrast */
+        }
+
+        th {
+            background-color: #444; /* Slightly lighter dark color for header */
+        }
+
+        tr:nth-child(even) td {
+            background-color: #555; /* Slightly lighter dark color for even rows */
+        }
+
+        .error {
+            text-align: center;
+            color: red;
+            margin-top: 20px;
+        }
+        button{
+            width: 10%;
+            padding: 15px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background-color 0.3s ease;
+        }
+    </style>
+
+</head>
+<body>
+<h1>My Services</h1>
+
+<!-- Error message -->
+<p th:if="${error != null}" th:text="${error}" class="error"></p>
+
+<!-- Bookings Table -->
+<table th:if="${booking != null}">
+    <thead>
+    <tr>
+        <th>BID</th>
+        <th>Service</th>
+        <th>Preferred Date</th>
+        <th>Preferred Time</th>
+        <th>Street Address</th>
+        <th>Landmark</th>
+        <th>Zip Code</th>
+        <th>Completion Date</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="booking, iterStat : ${booking}">
+        <td th:text="${iterStat.count}">1</td>
+        <td th:text="${booking.service}">Electrical</td>
+        <td th:text="${booking.preferredDate}">2024-12-30</td>
+        <td th:text="${booking.preferredTime}">10:00 AM</td>
+        <td th:text="${booking.streetAddress}">123 Main Street</td>
+        <td th:text="${booking.landmark}">Near Central Park</td>
+        <td th:text="${booking.zipCode}">12345</td>
+        <td></td>
+    </tr>
+    </tbody>
+</table>
+<footer>
+<p style="text-align: center;">
+    <button><a th:href="@{/homeIn}">Back to Home</a></button>
+</p>
+</footer>
+</body>
+</html>

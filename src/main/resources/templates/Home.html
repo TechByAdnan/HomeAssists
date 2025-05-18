@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HomeAssist Services</title>
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <style>
+        /* General Styles */
+  body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f8f9fa;
+      background: url('HomeAssists.jpeg') no-repeat center center/cover;
+      color: #343a40;
+      line-height: 1.6;
+  }
+
+  /* Welcome Message Section */
+#welcome-message {
+    text-align: center;
+    padding: 60px 30px;
+    background: linear-gradient(135deg, #007bff, #6c757d);
+    color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+    margin: 20px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#welcome-message h1 {
+    font-size: 3rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 20px;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+#welcome-message p {
+    font-size: 1.4rem;
+    line-height: 1.8;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 15px;
+    font-weight: 400;
+    opacity: 0.9;
+}
+
+/* Hover effect for the welcome section */
+#welcome-message:hover {
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+    transform: translateY(-5px);
+    transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+
+  /* Key Features Section */
+  .key-features {
+      background-color: #ffffff;
+      padding: 40px 20px;
+      border-radius: 8px;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+      max-width: 1000px;
+      margin: 30px auto;
+  }
+
+  .key-features h2 {
+      font-size: 2rem;
+      text-transform: uppercase;
+      color: #007bff;
+      margin-bottom: 30px;
+      letter-spacing: 1px;
+      text-align: center;
+  }
+
+  .key-features ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+  }
+
+  .key-features li {
+      background-color: #f8f9fa;
+      border: 1px solid #dee2e6;
+      padding: 15px 20px;
+      margin-bottom: 15px;
+      border-radius: 5px;
+      font-size: 1.1rem;
+      color: #495057;
+      line-height: 1.6;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  .key-features li strong {
+      color: #007bff;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+  }
+
+  .key-features li:hover {
+      transform: translateY(-5px);
+      box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  .key-features li:last-child {
+      margin-bottom: 0;
+  }
+
+  /* Services Section */
+  .services-section {
+      margin-top: 40px;
+      padding: 20px;
+      background-color: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+      max-width: 1000px;
+      margin: 30px auto;
+  }
+
+  .services-section h2 {
+      font-size: 2rem;
+      color: #007bff;
+      margin-bottom: 20px;
+  }
+
+  .services-section ul {
+      list-style: none;
+      padding: 0;
+  }
+
+  .services-section li {
+      color: #495057;
+      font-size: 1.1rem;
+      margin-bottom: 15px;
+  }
+
+  .services-section p {
+      color: #666;
+      font-size: 1.1rem;
+      line-height: 1.8;
+      margin-top: 20px;
+  }
+
+  /* Footer Section */
+  footer {
+      text-align: center;
+      padding: 10px;
+      background-color: #007bff;
+      color: #fff;
+      margin-top: 40px;
+      border-radius: 5px;
+  }
+
+  footer p {
+      margin: 0;
+      font-size: 1rem;
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+      #welcome-message h1 {
+          font-size: 2rem;
+      }
+
+      #welcome-message p {
+          font-size: 1rem;
+          padding: 0 10px;
+      }
+
+      .key-features h2 {
+          font-size: 1.8rem;
+      }
+
+      .key-features li {
+          font-size: 1rem;
+          flex-direction: column;
+          text-align: center;
+      }
+
+      .key-features li strong {
+          margin-bottom: 10px;
+      }
+
+      .services-section h2 {
+          font-size: 1.8rem;
+      }
+
+      .services-section li {
+          font-size: 1rem;
+      }
+
+      .services-section p {
+          font-size: 1rem;
+      }
+
+      footer p {
+          font-size: 1rem;
+      }
+  }
+
+    </style>
+</head>
+<body>
+<section id="detailed-services">
+    <div id="welcome-message">
+        <h1>Welcome to HomeAssist</h1>
+        <p>Your trusted partner for Home services. From cleaning to repairs, we've got you covered. Whether you need a maid, a carpenter, a plumber, or an electrician, our skilled professionals are ready to assist you in your local area.</p>
+    </div>
+    <div class="key-features">
+        <h2>Key Features</h2>
+        <ul>
+            <li><strong>Ease of Booking:</strong> Schedule services with just a few clicks.</li>
+            <li><strong>Certified Professionals:</strong> Our team is vetted, certified, and highly experienced.</li>
+            <li><strong>Reliable and Secure:</strong> Guaranteed satisfaction with our trustworthy services.</li>
+        </ul>
+    </div>
+    <div class="services-section">
+        <h2>Our Comprehensive Services</h2>
+        <p>At HomeAssist, we offer a wide range of home services to cater to your every need:</p>
+        <ul>
+            <li><strong>Maid Services:</strong> Our maids are thorough, trustworthy, and efficient. From regular cleaning to deep cleaning, we've got your home covered.</li>
+            <li><strong>Carpentry Services:</strong> From fixing furniture to custom-built pieces, our carpenters deliver precision and craftsmanship.</li>
+            <li><strong>Plumbing Services:</strong> Leaky pipes, clogged drains, or new installations—our plumbers handle it all with expertise.</li>
+            <li><strong>Electrical Services:</strong> Our electricians ensure your home’s electrical system is safe and up to code, whether it’s repairs or new installations.</li>
+        </ul>
+        <p>Our goal is to provide you with a hassle-free experience, ensuring that all your home maintenance needs are met with the highest standards of quality and professionalism. With HomeAssist, you can rest easy knowing that your home is in capable hands.</p>
+    </div>
+</section>
+
+<footer>
+    <p>© 2024 HomeAssist. All rights reserved.</p>
+</footer>
+</body>
+</html>
